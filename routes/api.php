@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
 /*
@@ -18,3 +19,9 @@ Route::middleware('auth:api')->group( function() {
 });
 Route::get('/show', 'API\ProjectController@show');
 Route::post('/store', 'API\ProjectController@store');
+Route::post('/update/{id}', 'API\ProjectController@update');
+Route::get('/delete/{id}', 'API\ProjectController@destroy');
+Route::get('/public/image/{filename}', function ($filename)
+{
+    return Image::make(public_path('public/image/' . $filename))->response();
+});

@@ -20,24 +20,23 @@ class ProjectController extends BaseController
 
   //insertDataProject
   public function store(Request $request){
-    $input = $request->all();
 
-    $validator = Validator::make($input, [
-      'title_project' => 'required',
-      'category_project' => 'required',
-      'image_project' => 'required'
+    $file = $request->file('image_project');
+    $nama_file = time()."_".$file->getClientOriginalName();
+    $tujuan_upload = 'public\image';
+    $file->move($tujuan_upload, $nama_file);
+
+
+    $project = Project::create([
+        'title_project' => $request->title_project,
+        'category_project' => $request->category_project,
+        'image_project' => $nama_file
     ]);
-
-    if ($validator->fails()) {
-      return $this->sendError('Validation Error', $validator->errors());
-    }
-
-    $project = Project::create($input);
 
     return $this->sendResponse($project->toArray(), 'Project Created Successfully');
   }
 
-  //show berdasar id
+  //show
   public function show(){
       $project = Project::all();
 
@@ -48,31 +47,31 @@ class ProjectController extends BaseController
   }
 
   //update project;
-  public function update(Request $request, Project $project){
+  public function update(Request $request, $id){
       $input = $request->all();
 
-      $validator = Validator::make($input, [
-         'title_project' => 'required',
-         'category_project' => 'required',
-         'image_project' => 'required'
-      ]);
-
-      if ($validator->fails()){
-          return $this->sendError('Validation Error', $validator->errors());
-      }
+      $project = Project::find($id);
 
       $project->title_project = $input['title_project'];
       $project->category_project = $input['category_project'];
-      $project->image_project = $input['image_project'];
+
+      if ($file = $request->hasFile('image_project')){
+          $file = $request->file('image_project');
+          $nama_file = time()."_".$file->getClientOriginalName();
+          $tujuan_upload = 'public\image';
+          $file->move($tujuan_upload, $nama_file);
+          $project->image_project = $nama_file;
+      }
+
       $project->save();
 
       return $this->sendResponse($project->toArray(), 'Project Updated Successfully');
   }
 
-  public function destroy(Project $project){
-      $project->delete();
+  public function destroy($id){
+      $project = Project::destroy($id);
 
-      return $this->sendResponse($project->toArray(), 'Project Deleted Successfully');
+      return $this->sendResponse($project, 'Project Deleted Successfully');
   }
 
 }

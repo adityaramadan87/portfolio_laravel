@@ -8,7 +8,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -107,10 +107,21 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TmVTTUAd4SKqyZMRN1mfURwnsQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/fitamind-backend-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/app-assets" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\portfolio\app\Http\Controllers\Web" />
+      <recent name="C:\xampp\htdocs\portfolio\app\Http\Controllers\web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\portfolio\public\app-assets" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,11 +151,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574065266404</updated>
-      <workItem from="1574065272365" duration="4633000" />
+      <workItem from="1574065272365" duration="6902000" />
+      <workItem from="1574126712368" duration="18000" />
+      <workItem from="1574127666880" duration="19496000" />
+      <workItem from="1574213255864" duration="11169000" />
+      <workItem from="1574239950308" duration="848000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

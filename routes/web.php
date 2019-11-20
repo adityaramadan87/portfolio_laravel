@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'Web\HomeController@index')->name('home');
+Route::get('/skills', 'Web\SkillsController@index')->name('skills');
+Route::get('/contact', 'Web\ContactController@index')->name('contact');
+Route::get('/project', 'Web\ProjectsController@index')->name('project');
